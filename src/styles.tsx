@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom mobile tweaks */
+html, body, #root {
+  height: 100%;
+  background-color: #071029;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Player-specific */
+.nexusv-player {
+  background: linear-gradient(180deg, rgba(7,18,41,1), rgba(5,10,22,1));
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  -webkit-user-select: none;
+}
+
+.progress-bar {
+  height: 3px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.progress-filled {
+  height: 100%;
+  width: 0%;
+  transition: width 0.08s linear;
+}
+.touch-hint {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* Hide desktop gestures that could conflict */
+@media (min-width: 640px) {
+  .nexusv-player {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+}
